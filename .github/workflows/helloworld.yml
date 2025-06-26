@@ -17,3 +17,9 @@ jobs:
 
       - name: "print date"
         run: date
+
+  multiply_action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "multiply 2 and 3"
+        run: expr 2 \* 3
