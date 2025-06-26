@@ -5,8 +5,7 @@ name: "Hello world workflow"
 on:
   push:
     branches:
-      - master
-      - production
+      - "**"
 
 jobs:
   hello_world:
@@ -17,3 +16,10 @@ jobs:
 
       - name: "print date"
         run: date
+
+  multiply_action:
+    if: ${{ github.ref_name == 'master' || github.ref_name == 'production'}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: "multiply 2 and 3"
+        run: expr 2 \* 3
