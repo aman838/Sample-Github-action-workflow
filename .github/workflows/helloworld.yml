@@ -5,10 +5,10 @@ name: "Hello world workflow"
 on:
   push:
     branches:
-      - master:
-      - production:
+      - master
+      - production
 
-job:
+jobs:
   hello_world:
     runs-on: ubuntu-latest
     steps:
