@@ -24,3 +24,10 @@ jobs:
     steps:
       - name: "multiply 2 and 3"
         run: expr 2 \* 3
+
+  workflow_dispatch:
+    if: ${{github.event_name == 'workflow_dispatch'}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: running on the pull request
+        run: echo "workflow Running on the pull request"
